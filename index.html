@@ -120,30 +120,66 @@
             border-radius: 4px;
         }
 
-        .combo-card h3 {
-    font-size: 1.5rem; /* Tamaño base */
+  .combo-card h3, .combos h2 {
+    font-size: clamp(1.5rem, 8vw, 2.5rem) !important; /* Se achica según el ancho de la pantalla */
     word-wrap: break-word;
     overflow-wrap: break-word;
+    white-space: normal; /* Evita que el texto intente irse en una sola línea */
+    max-width: 100%;
+}
 }
 
-        /* MODAL */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); overflow-y: auto; align-items: center; justify-content: center; }
-        .modal-content { background: #0f0f0f; padding: 40px; width: 90%; max-width: 850px; border: 1px solid #333; position: relative; color: #fff; margin: auto; }
-        .close { position: absolute; right: 20px; top: 10px; font-size: 35px; cursor: pointer; color: #fff; }
-        .ficha-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; text-align: left; }
-        .selector-compra { margin: 20px 0; background: #151515; padding: 15px; border-radius: 5px; }
-        .selector-compra label { display: block; font-size: 0.7rem; color: #888; margin-bottom: 5px; text-transform: uppercase; font-weight: 800; }
-        select { width: 100%; background: #000; border: 1px solid #333; color: white; padding: 12px; margin-bottom: 15px; border-radius: 4px; cursor: pointer; font-size: 1rem; -webkit-appearance: none; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.8rem; color: #ccc; }
-        table th, table td { border: 1px solid #222; padding: 10px; text-align: center; }
-        .btn-enviar-wa { background: var(--acento); color: #fff; border: none; padding: 15px; width: 100%; font-weight: 900; text-transform: uppercase; cursor: pointer; border-radius: 4px; margin-top: 20px; font-size: 0.9rem; }
-        
-        footer { padding: 50px 20px; text-align: center; font-size: 0.75rem; color: #444; border-top: 1px solid #111; }
-        @media (max-width: 768px) { 
-            .ficha-grid { grid-template-columns: 1fr; } 
-            .modal-content { padding: 25px; width: 100%; min-height: 100vh; } 
-            .grid-combos { grid-template-columns: 1fr; }
-        }
+       /* MODAL CORREGIDO - VALENTÍA */
+.modal { 
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(0,0,0,0.98); 
+    overflow-y: auto; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.modal-content { 
+    background: #0f0f0f; 
+    padding: 30px; 
+    width: 90%; /* Nunca 100%, para que no toque los bordes */
+    max-width: 850px; 
+    border: 1px solid #333; 
+    position: relative; 
+    color: #fff; 
+    margin: 40px auto; /* Aire arriba y abajo */
+    box-sizing: border-box; /* CLAVE: que el padding no infle el ancho */
+}
+
+.close { position: absolute; right: 20px; top: 10px; font-size: 35px; cursor: pointer; color: #fff; z-index: 2001; }
+
+.ficha-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: left; }
+
+/* REGLAS PARA CELULARES (Ajuste fino) */
+@media (max-width: 768px) { 
+    .ficha-grid { grid-template-columns: 1fr; gap: 20px; } 
+    
+    .modal-content { 
+        padding: 20px; 
+        width: 95%; /* Casi toda la pantalla pero con un mínimo margen */
+        margin: 20px auto;
+        min-height: auto; /* Quitamos el 100vh que lo estira raro */
+    } 
+    
+    .grid-combos { grid-template-columns: 1fr; }
+
+    /* Achicamos la tabla para que no se salga */
+    table { font-size: 0.7rem; }
+    table th, table td { padding: 5px; }
+    
+    /* Arreglo final para títulos de combos */
+    .combo-card h3 { font-size: 1.3rem; }
+}
     </style>
 </head>
 <body>
