@@ -27,6 +27,16 @@
             --acento: #25d366; --subtitulo: #888; --borde: #222; --gris-claro: #f4f4f4;
             --oro: #d4af37; /* Color dorado para Combos */
         }
+        body, html {
+    overflow-x: hidden; /* Prohíbe el scroll lateral */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box; /* Evita que los bordes "inflen" el ancho de las cajas */
+}
 
         html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
         body { font-family: 'Inter', sans-serif; margin: 0; background: var(--fondo); color: var(--blanco); line-height: 1.6; overflow-x: hidden; }
@@ -66,18 +76,33 @@
         .info-p { padding: 15px 5px; }
         .info-p h4 { margin: 0; font-size: 1rem; text-transform: uppercase; color: #fff; }
 
-        /* SECCIÓN COMBOS */
-        .combos { padding: 80px 5%; text-align: center; background: #000; border-top: 1px solid var(--borde); }
-        .grid-combos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .combo-card { 
-            background: #050505; 
-            border: 2px solid var(--oro); 
-            padding: 30px; 
-            border-radius: 8px; 
-            text-align: left; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between;
+      /* SECCIÓN COMBOS - CORREGIDA PARA CELULARES */
+.combos { 
+    padding: 60px 20px; /* Bajé un poco el padding para ganar espacio en celus */
+    text-align: center; 
+    background: #000; 
+    border-top: 1px solid var(--borde);
+    overflow: hidden; /* Evita que el brillo del borde se escape */
+}
+
+.grid-combos { 
+    display: grid; 
+    /* Cambié 300px por 280px para que entre hasta en el celu más chiquito */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; 
+}
+
+.combo-card { 
+    background: #050505; 
+    border: 2px solid var(--oro); 
+    padding: 20px; /* Un poco menos de aire adentro para que no apriete el texto */
+    border-radius: 8px; 
+    text-align: left; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    box-sizing: border-box; /* Fundamental para que el padding no sume ancho extra */
+};
         }
         .combo-card h3 { color: var(--oro); text-transform: uppercase; margin: 0 0 15px; letter-spacing: 2px; }
         .combo-card p { color: #ccc; font-size: 0.9rem; margin-bottom: 20px; }
@@ -94,6 +119,12 @@
             font-size: 0.9rem;
             border-radius: 4px;
         }
+
+        .combo-card h3 {
+    font-size: 1.5rem; /* Tamaño base */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
 
         /* MODAL */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); overflow-y: auto; align-items: center; justify-content: center; }
