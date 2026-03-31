@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-15S2KLL0NP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-15S2KLL0NP');
+    </script>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VALENTÍA | Urban Fashion & Fabricación">
+    <meta property="og:description" content="Indumentaria urbana premium. Fabricación de producto terminado y venta mayorista. Envíos a toda Argentina.">
+    <meta property="og:image" content="https://valentia-r.github.io/Valentia-RopaUrbana/gola.PNG">
+    <meta property="og:url" content="https://valentia-r.github.io/Valentia-RopaUrbana/">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <title>VALENTIA | Fabricante de Ropa Mayorista Argentina</title>
+    <meta name="description" content="Fábrica de ropa en Buenos Aires. Venta mayorista de remeras gola, joggers baggy y remeras básicas. Servicio de producto terminado para marcas y emprendedores.">
+    <meta name="keywords" content="remeras por mayor, remeras gola, joggers baggy, fabricante de ropa argentina, valentia industrial">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root { 
+            --blanco: #ffffff; --fondo: #0a0a0a; --gris-oscuro: #111; 
+            --acento: #25d366; --subtitulo: #888; --borde: #222; --gris-claro: #f4f4f4;
+            --oro: #d4af37;
+        }
+
+        /* --- ARREGLO MAESTRO ANTI-MOVIMIENTO --- */
+        * { box-sizing: border-box; }
+        html, body { 
+            width: 100%; 
+            overflow-x: hidden; 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Inter', sans-serif; 
+            background: var(--fondo); 
+            color: var(--blanco); 
+            line-height: 1.6;
+        }
+
+        html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+
+        nav { 
+            display: flex; justify-content: space-between; padding: 20px 5%; 
+            background: rgba(0,0,0,0.95); position: sticky; top: 0; z-index: 1000; 
+            border-bottom: 1px solid var(--borde); backdrop-filter: blur(10px); align-items: center;
+        }
+        .logo { font-weight: 900; letter-spacing: 5px; font-size: 1.5rem; text-transform: uppercase;}
+        .nav-links a { color: var(--subtitulo); text-decoration: none; font-size: 0.7rem; margin-left: 20px; text-transform: uppercase; letter-spacing: 1px;}
+
+        .hero { 
+            height: 40vh; display: flex; flex-direction: column; justify-content: center; 
+            align-items: center; text-align: center; padding: 0 5%;
+            border-bottom: 1px solid var(--borde);
+        }
+        .hero h1 { font-size: clamp(1.8rem, 8vw, 3.5rem); margin: 0; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; width: 100%; }
+
+        /* SECCIÓN FÁBRICA */
+        .produccion { background: var(--blanco); color: #000; padding: 60px 5%; text-align: center; }
+        .section-title { text-transform: uppercase; letter-spacing: 4px; font-size: clamp(1.2rem, 5vw, 1.8rem); margin-bottom: 40px; font-weight: 900; position: relative; display: inline-block; padding-bottom: 15px; width: 100%; }
+        
+        .grid-procesos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .proceso { background: var(--gris-claro); padding: 20px; border-radius: 4px; text-align: left; }
+        .proceso img { width: 100%; height: 200px; object-fit: cover; filter: grayscale(100%); transition: 0.5s; }
+        .proceso:hover img { filter: grayscale(0%); }
+
+        /* CATÁLOGO */
+        .catalogo { padding: 60px 5%; text-align: center; background: #0a0a0a; }
+        .grid-productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; }
+        .producto { background: var(--gris-oscuro); padding: 10px; border: 1px solid var(--borde); cursor: pointer; text-align: left; }
+        .producto img { width: 100%; height: 250px; object-fit: cover; }
+
+        /* SECCIÓN COMBOS CORREGIDA */
+        .combos { padding: 60px 20px; text-align: center; background: #000; border-top: 1px solid var(--borde); }
+        .grid-combos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; width: 100%; }
+        .combo-card { 
+            background: #050505; 
+            border: 2px solid var(--oro); 
+            padding: 25px; 
+            border-radius: 8px; 
+            text-align: left; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between;
+            width: 100%;
+        }
+        .combo-card h3 { color: var(--oro); text-transform: uppercase; margin: 0 0 10px; letter-spacing: 1px; font-size: clamp(1.1rem, 4vw, 1.5rem); overflow-wrap: break-word; }
+        .combo-precio { font-size: 1.5rem; font-weight: 900; color: #fff; margin-bottom: 15px; display: block; }
+        .btn-combo { background: var(--oro); color: #000; border: none; padding: 15px; width: 100%; font-weight: 900; text-transform: uppercase; cursor: pointer; border-radius: 4px; }
+
+        /* MODAL CORREGIDO - FLOTANTE Y ADAPTABLE */
+        .modal { 
+            display: none; 
+            position: fixed !important; 
+            z-index: 9999 !important; 
+            left: 0; top: 0; 
+            width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.98); 
+            overflow-y: auto; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 10px;
+        }
+        .modal-content { 
+            background: #0f0f0f; 
+            padding: 30px; 
+            width: 95%; 
+            max-width: 800px; 
+            border: 1px solid #333; 
+            position: relative; 
+            color: #fff; 
+            margin: auto; 
+            box-sizing: border-box;
+        }
+        .close { position: fixed; right: 20px; top: 15px; font-size: 40px; cursor: pointer; color: #fff; z-index: 10000; background: rgba(0,0,0,0.5); border-radius: 50%; width: 50px; height: 50px; text-align: center; line-height: 45px; }
+        .ficha-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: left; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.8rem; color: #ccc; }
+        table th, table td { border: 1px solid #222; padding: 8px; text-align: center; }
+        
+        .btn-enviar-wa { background: var(--acento); color: #fff; border: none; padding: 15px; width: 100%; font-weight: 900; text-transform: uppercase; border-radius: 4px; margin-top: 20px; cursor: pointer; }
+
+        footer { padding: 40px 20px; text-align: center; font-size: 0.75rem; color: #444; border-top: 1px solid #111; }
+
+        /* AJUSTES MÓVILES FINALES */
+        @media (max-width: 768px) { 
+            .ficha-grid { grid-template-columns: 1fr; } 
+            .modal-content { padding: 20px; margin-top: 60px; width: 100%; }
+            .modal { align-items: flex-start; }
+            .nav-links a { margin-left: 10px; font-size: 0.6rem; }
+            .grid-combos { grid-template-columns: 1fr; }
+            .hero { height: 30vh; }
+            table { font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">VALENTIA</div>
+        <div class="nav-links"><a href="#servicios">Servicios</a><a href="#catalogo">Catálogo</a><a href="#combos">Combos</a></div>
+    </nav>
+
+    <header class="hero">
+        <h1>PRODUCCIÓN INDUSTRIAL</h1>
+        <p>Servicio integral de producto terminado para marcas.</p>
+    </header>
+
+    <section id="servicios" class="produccion">
+        <h2 class="section-title">Servicios de Fábrica</h2>
+        <div class="grid-procesos">
+            <div class="proceso"><img src="molderia _.png" alt="Moldería"><div class="info-proc"><h4>Moldería Digital</h4><p>Desarrollo en CLO 3D y Optitex.</p></div></div>
+            <div class="proceso"><img src="corte.png" alt="Corte"><div class="info-proc"><h4>Corte Industrial</h4><p>Tizado optimizado y precisión.</p></div></div>
+            <div class="proceso"><img src="estampado_.png" alt="Estampado"><div class="info-proc"><h4>Estampado & DTF</h4><p>Tintas de alta resistencia.</p></div></div>
+            <div class="proceso"><img src="COSTURA_.png" alt="Costura"><div class="info-proc"><h4>Confección</h4><p>Líneas de producción premium.</p></div></div>
+        </div>
+    </section>
+
+    <section id="catalogo" class="catalogo">
+        <h2 class="section-title" style="color:#fff">Stock Permanente</h2>
+        <div class="grid-productos">
+            <div class="producto" onclick="abrirFicha('BAGGY JOGGER', 'Frixa invisible', ['Calce Relax', 'Puños Reforzados'], ['Negro', 'Gris', 'Beige'], [['S', '38cm', '98cm'], ['M', '40cm', '100cm'], ['L', '42cm', '102cm']])"> 
+                <img src="BAGGY.jpeg" alt="Baggy"><div class="info-p"><h4>Baggy Joggers $41.500</h4><p>Ver Detalle & Comprar</p></div>
+            </div>
+            <div class="producto" onclick="abrirFicha('CANGURO MULTIMARCA', 'Frisa Invisible Heavy', ['Capucha Forrada', 'Corte Boxy'], ['Negro', 'Azul'], [['M', '54cm', '64cm'], ['L', '56cm', '66cm'],['XL', '58cm', '68cm'],['XXL', '60cm', '70cm']])">
+                <img src="CANGURO_MULTI.png" alt="Hoodie"><div class="info-p"><h4>CANGURO $47.500</h4><p>Ver Detalle & Comprar</p></div>
+            </div>
+            <div class="producto" onclick="abrirFicha('REMERA GOLA', 'Jersey 24/1 Peinado', ['Cuello Gola 3cm'], ['Blanco', 'Negro'],[['S', '50cm', '70cm'], ['M', '52cm', '71cm'],['L', '54cm', '73cm'],['XL', '56cm', '76cm']])">
+                <img src="gola.PNG" alt="Gola"><div class="info-p"><h4>Remera Gola $18.600</h4><p>Ver Detalle & Comprar</p></div>
+            </div>
+            <div class="producto" onclick="abrirFicha('REMERA MULTIMARCA', 'Jersey 24/1', ['Corte Tradicional'], ['Blanco', 'Negro'], [['S', '50cm', '70cm'], ['M', '52cm', '71cm'],['L', '54cm', '73cm'],['XL', '56cm', '76cm']])">
+                <img src="multi.PNG" alt="Multimarca"><div class="info-p"><h4>Remera Multi $18.200</h4><p>Ver Detalle & Comprar</p></div>
+            </div>
+            <div class="producto" onclick="abrirFicha('REMERA BASICA', 'Jersey 24/1', ['100% Algodón'], ['Negro', 'Blanco', 'Gris'], [['S', '50cm', '70cm'], ['M', '52cm', '71cm'],['L', '54cm', '73cm'],['XL', '56cm', '76cm']])">
+                <img src="BASICA NEGRA.png" alt="Remera Basica"><div class="info-p"><h4>Básica $13.500</h4><p>Ver Detalle & Comprar</p></div>
+            </div>
+            <div class="producto" onclick="abrirFicha('CUELLO REDONDO GOLA', 'Friza Invisible', ['Calidad Premium'], ['Negro', 'Gris', 'Choco'], [['S', '56cm', '65cm'], ['M', '58cm', '66cm'],['L', '60cm', '68cm'],['XL', '64cm', '72cm']])">
+                <img src="redondo_gola.png" alt="Cuello Gola"><div class="info-p"><h4>Redondo Gola $35.000</h4><p>Ver Detalle & Comprar</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="combos" class="combos">
+        <h2 class="section-title" style="color:var(--oro)">Combos IMPERDIBLES</h2>
+        <div class="grid-combos">
+            <div class="combo-card">
+                <h3>PACK 1 (7 PRENDAS)</h3>
+                <p>2 Remeras Básicas + 2 Estampadas + 1 Canguro + 1 C/Redondo + 1 Baggy.</p>
+                <span class="combo-precio">$109.900</span>
+                <button class="btn-combo" onclick="enviarWACombo('PACK 1 (7 PRENDAS)')">Pedir por WhatsApp</button>
+            </div>
+            <div class="combo-card">
+                <h3>PACK 2 (10 PRENDAS)</h3>
+                <p>4 Remeras Basicas + 6 Remeras Estampadas. Ideal stock temporada.</p>
+                <span class="combo-precio">$112.000</span>
+                <button class="btn-combo" onclick="enviarWACombo('PACK 2 (10 PRENDAS)')">Pedir por WhatsApp</button>
+            </div>
+            <div class="combo-card">
+                <h3>PACK 3 (14 PRENDAS)</h3>
+                <p>4 Básicas + 4 Estampadas + 2 Canguros + 2 C/Redondos + 2 Baggy.</p>
+                <span class="combo-precio">$219.800</span>
+                <button class="btn-combo" onclick="enviarWACombo('PACK 3 (14 PRENDAS)')">Pedir por WhatsApp</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="miModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarFicha()">&times;</span>
+            <div class="ficha-grid">
+                <div>
+                    <h2 id="m-titulo" style="font-size: 1.5rem; text-transform: uppercase;"></h2>
+                    <p id="m-material" style="color:var(--acento); font-weight:bold; font-size: 0.9rem;"></p>
+                    <div class="selector-compra">
+                        <label>Color</label><select id="select-color"></select>
+                        <label>Talle</label><select id="select-talle"></select>
+                    </div>
+                </div>
+                <div>
+                    <h5 style="color:#555; margin-bottom:10px;">TABLA DE MEDIDAS (cm)</h5>
+                    <table>
+                        <thead><tr><th>Talle</th><th>Ancho</th><th>Largo</th></tr></thead>
+                        <tbody id="m-cuerpo-tabla"></tbody>
+                    </table>
+                    <button onclick="enviarPedido()" class="btn-enviar-wa">Consultar Stock</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer><p>VALENTIA INDUSTRIAL - @ropadehombreya_ | Buenos Aires, Argentina</p></footer>
+
+    <script>
+        let productoActual = "";
+        function abrirFicha(titulo, material, carac, colores, medidas) {
+            productoActual = titulo;
+            document.getElementById('m-titulo').innerText = titulo;
+            document.getElementById('m-material').innerText = material;
+            const sc = document.getElementById('select-color'); sc.innerHTML = "";
+            colores.forEach(c => { const o = document.createElement('option'); o.value=c; o.innerText=c; sc.appendChild(o); });
+            const st = document.getElementById('select-talle'); const tb = document.getElementById('m-cuerpo-tabla');
+            st.innerHTML = ""; tb.innerHTML = "";
+            medidas.forEach(m => {
+                const o = document.createElement('option'); o.value=m[0]; o.innerText=m[0]; st.appendChild(o);
+                const r = document.createElement('tr'); r.innerHTML = `<td>${m[0]}</td><td>${m[1]}</td><td>${m[2]}</td>`; tb.appendChild(r);
+            });
+            document.getElementById('miModal').style.display = "flex";
+            document.body.style.overflow = "hidden";
+        }
+        function enviarPedido() {
+            const t = document.getElementById('select-talle').value;
+            const c = document.getElementById('select-color').value;
+            const msj = `Hola Valentia! 👋 Quiero consultar stock de:\n\n📌 *Producto:* ${productoActual}\n📏 *Talle:* ${t}\n🎨 *Color:* ${c}`;
+            window.open(`https://wa.me/541134432106?text=${encodeURIComponent(msj)}`, '_blank');
+        }
+        function enviarWACombo(nombre) {
+            const msj = `Hola Valentia! 👋 Me interesa el *${nombre}*.\n\n¿Me podrías pasar más detalles?`;
+            window.open(`https://wa.me/541134432106?text=${encodeURIComponent(msj)}`, '_blank');
+        }
+        function cerrarFicha() { document.getElementById('miModal').style.display = "none"; document.body.style.overflow = "auto"; }
+        window.onclick = function(e) { if (e.target == document.getElementById('miModal')) cerrarFicha(); }
+    </script>
+</body>
+</html>
